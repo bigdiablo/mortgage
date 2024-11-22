@@ -14,10 +14,18 @@
         </div>
         <div class="wrapper">
             <div class="question">
-                <h3>Address</h3>
-                <p>Enter your full address</p>
+                <h3>Are you a homeowner?</h3>
+                <p>Select if you currently own a home or are planning to buy one.</p>
                 <div class="options">
-                    <input type="text" id="address" name="address" placeholder="Enter Your Address" autocomplete="address-level1">
+                    <button type="button" data-value="Yes" class="selected">
+                        <img src="/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
+                        Yes, I own a home
+                    </button>
+                    <button type="button" data-value="No">
+                        <img src="/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
+                        No, I'm looking to buy
+                    </button>
+                    <input type="hidden" name="homeowner" value="Yes">
                 </div>
             </div>
             <div class="question">
@@ -25,22 +33,60 @@
                 <p>Select the type of your property</p>
                 <div class="options">
                     <button type="button" data-value="Single Family" class="selected">
-                        <img src="icon-single.png" alt="Icon">
+                        <img src="/wp-content/uploads/2024/11/icon-single.png" alt="Icon">
                         Single Family
                     </button>
                     <button type="button" data-value="Multi-Family">
-                        <img src="icon-multi.png" alt="Icon">
+                        <img src="/wp-content/uploads/2024/11/icon-multi.png" alt="Icon">
                         Multi-Family
                     </button>
                     <button type="button" data-value="Condominium">
-                        <img src="icon-condo.png" alt="Icon">
+                        <img src="/wp-content/uploads/2024/11/icon-condo.png" alt="Icon">
                         Condominium
                     </button>
                     <button type="button" data-value="Mobile Home">
-                        <img src="icon-mobile.png" alt="Icon">
+                        <img src="/wp-content/uploads/2024/11/icon-mobile.png" alt="Icon">
                         Mobile Home
                     </button>
                     <input type="hidden" name="propertyType" value="Single Family">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Credit Score</h3>
+                <p>Rate your credit score</p>
+                <div class="options">
+                    <button type="button" data-value="Excellent (700 and above)">
+                        <img src="/wp-content/uploads/2024/11/icon-excellent.png" alt="Icon">
+                        Excellent (+700)
+                    </button>
+                    <button type="button" data-value="Good (640-699)" class="selected">
+                        <img src="/wp-content/uploads/2024/11/icon-good.png" alt="Icon">
+                        Good (700-640)
+                    </button>
+                    <button type="button" data-value="Fair (580-639)">
+                        <img src="/wp-content/uploads/2024/11/icon-fair.png" alt="Icon">
+                        Fair (640-560)
+                    </button>
+                    <button type="button" data-value="Poor (579 or less)">
+                        <img src="/wp-content/uploads/2024/11/icon-poor.png" alt="Icon">
+                        Poor (560)
+                    </button>
+                    <input type="hidden" name="creditScore" value="Good (640-699)">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Military Service</h3>
+                <p>Military experience in your household?</p>
+                <div class="options">
+                    <button type="button" data-value="Yes">
+                        <img src="/wp-content/uploads/2024/11/icon-usa.png" alt="Icon">
+                        Yes
+                    </button>
+                    <button type="button" data-value="No" class="selected">
+                        <img src="/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
+                        No
+                    </button>
+                    <input type="hidden" name="militaryService" value="No">
                 </div>
             </div>
             <div class="question">
@@ -80,168 +126,35 @@
                 </div>
             </div>
             <div class="question">
-                <h3>Current Rate Type</h3>
-                <p>Is your current rate fixed or adjustable?</p>
+                <h3>Employment Status</h3>
+                <p>Select your current employment status</p>
                 <div class="options">
-                    <button type="button" data-value="Fixed" class="selected">
-                        <img src="icon-chart.png" alt="Icon">
-                        Fixed
+                    <button type="button" data-value="Employed" class="selected">
+                        <img src="/wp-content/uploads/2024/11/icon-employed.png" alt="Icon">
+                        Employed
                     </button>
-                    <button type="button" data-value="Variable">
-                        <img src="icon-variable.png" alt="Icon">
-                        Variable
+                    <button type="button" data-value="Self Employed">
+                        <img src="/wp-content/uploads/2024/11/icon-self.png" alt="Icon">
+                        Self Employed
                     </button>
-                    <input type="hidden" name="rateType" value="Fixed">
+                    <button type="button" data-value="Retired">
+                        <img src="/wp-content/uploads/2024/11/icon-retired.png" alt="Icon">
+                        Retired
+                    </button>
+                    <button type="button" data-value="Retired">
+                        <img src="/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
+                        Unemployed
+                    </button>
+                    <input type="hidden" name="employment" value="Employed">
                 </div>
             </div>
             <div class="question">
-                <h3>Current Loan Term</h3>
-                <p>Select your current loan term</p>
+                <h3>Address</h3>
+                <p>Enter your full address</p>
                 <div class="options">
-                    <button type="button" data-value="30 Years" class="selected">
-                        <img src="icon-calendar.png" alt="Icon">
-                        30 Years
-                    </button>
-                    <button type="button" data-value="20 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        20 Years
-                    </button>
-                    <button type="button" data-value="15 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        15 Years
-                    </button>
-                    <button type="button" data-value="10 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        10 Years
-                    </button>
-                    <button type="button" data-value="7 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        7 Years
-                    </button>
-                    <button type="button" data-value="5 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        5 Years
-                    </button>
-                    <input type="hidden" name="loanTerm" value="30 Years">
+                    <input type="text" id="address" name="address" placeholder="Enter Your Address" autocomplete="address-level1">
                 </div>
-            </div>
-            <div class="question">
-                <h3>Credit Score</h3>
-                <p>Rate your credit score</p>
-                <div class="options">
-                    <button type="button" data-value="Excellent (700 and above)">
-                        <img src="icon-excellent.png" alt="Icon">
-                        Excellent (700 and above)
-                    </button>
-                    <button type="button" data-value="Good (640-699)" class="selected">
-                        <img src="icon-good.png" alt="Icon">
-                        Good (640-699)
-                    </button>
-                    <button type="button" data-value="Fair (580-639)">
-                        <img src="icon-fair.png" alt="Icon">
-                        Fair (580-639)
-                    </button>
-                    <button type="button" data-value="Poor (579 or less)">
-                        <img src="icon-poor.png" alt="Icon">
-                        Poor (579 or less)
-                    </button>
-                    <input type="hidden" name="creditScore" value="Good (640-699)">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Loan Type</h3>
-                <p>What is your current loan type?</p>
-                <div class="options">
-                    <button type="button" data-value="Conventional" class="selected">
-                        <img src="icon-bank.png" alt="Icon">
-                        Conventional
-                    </button>
-                    <button type="button" data-value="VA">
-                        <img src="icon-usa.png" alt="Icon">
-                        VA
-                    </button>
-                    <button type="button" data-value="FHA">
-                        <img src="icon-bank.png" alt="Icon">
-                        FHA
-                    </button>
-                    <input type="hidden" name="loanType" value="Conventional">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Military Service</h3>
-                <p>Military experience in your household?</p>
-                <div class="options">
-                    <button type="button" data-value="Yes">
-                        <img src="icon-usa.png" alt="Icon">
-                        Yes
-                    </button>
-                    <button type="button" data-value="No" class="selected">
-                        <img src="icon-no.png" alt="Icon">
-                        No
-                    </button>
-                    <input type="hidden" name="militaryService" value="No">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Bankruptcy or Foreclosure</h3>
-                <p>Recent bankruptcy or foreclosure?</p>
-                <div class="options">
-                    <button type="button" data-value="Yes">
-                        <img src="icon-yes.png" alt="Icon">
-                        Yes
-                    </button>
-                    <button type="button" data-value="No" class="selected">
-                        <img src="icon-no.png" alt="Icon">
-                        No
-                    </button>
-                    <input type="hidden" name="bankruptcy" value="No">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Late Payments</h3>
-                <p>Do you have any history of late payments?</p>
-                <div class="options">
-                    <button type="button" data-value="Yes">
-                        <img src="icon-yes.png" alt="Icon">
-                        Yes
-                    </button>
-                    <button type="button" data-value="No" class="selected">
-                        <img src="icon-no.png" alt="Icon">
-                        No
-                    </button>
-                    <input type="hidden" name="latePayments" value="No">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Verified Income</h3>
-                <p>Is your income verified and documented?</p>
-                <div class="options">
-                    <button type="button" data-value="Yes" class="selected">
-                        <img src="icon-yes.png" alt="Icon">
-                        Yes
-                    </button>
-                    <button type="button" data-value="No">
-                        <img src="icon-no.png" alt="Icon">
-                        No
-                    </button>
-                    <input type="hidden" name="verifiedIncome" value="Yes">
-                </div>
-            </div>
-            <div class="question">
-                <h3>Mortgage Quote</h3>
-                <p>Select the type of mortgage you are seeking</p>
-                <div class="options">
-                    <button type="button" data-value="Refinance" class="selected">
-                        <img src="icon-refinance.png" alt="Icon">
-                        Refinance
-                    </button>
-                    <button type="button" data-value="Purchase">
-                        <img src="icon-purchase.png" alt="Icon">
-                        Purchase
-                    </button>
-                    <input type="hidden" name="mortgageQuote" value="Refinance">
-                </div>
-            </div>            
+            </div>        
             <div class="question">
                 <h3>Contact Information</h3>
                 <p>Complete this final step to see your results</p>
