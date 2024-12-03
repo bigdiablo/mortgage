@@ -239,6 +239,13 @@ body {
     height: auto;
 }
 
+.options .house {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid #ddd;
+}
+
 .actions {
     display: flex;
     align-items: center;
