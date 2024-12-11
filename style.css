@@ -134,7 +134,9 @@ body {
 .options {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    min-height: 230px;
     gap: 10px;
     margin-top: 20px;
 }
@@ -212,6 +214,8 @@ body {
     white-space: nowrap;
     background: #eee;
     transition: all .3s ease;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .options button:hover {
@@ -251,6 +255,8 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .actions .simple {
@@ -306,6 +312,11 @@ body {
     border-color: #e62e1f;
 }
 
+.field.error input:focus {
+    border-color: #e62e1f;
+    background: #fff;
+}
+
 .field.error i,
 .field.error label,
 .field.error input::placeholder {
@@ -318,7 +329,7 @@ body {
     align-items: center;
     bottom: 0;
     right: 15px;
-    color: #ddd;
+    color: #999;
     font-size: 18px;
     width: auto;
     height: 45px;
@@ -334,10 +345,15 @@ body {
     line-height: 1;
     padding: 0 20px;
     border-radius: 20px;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
-    border-color: #ddd;
-    background: transparent;
+    border-color: #999;
+    background: #fff;
+}
+
+.field input:focus {
+    border-color: #999;
+    background: #fff;
 }
 
 .field input::placeholder {
