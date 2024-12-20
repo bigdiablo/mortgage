@@ -12,6 +12,10 @@
         <div class="progress">
             <div class="bar" id="bar"></div>
         </div>
+        <div class="heading">
+            <img src="https://placehold.co/120x60" alt="Brand">
+            <img src="https://placehold.co/60x60" alt="Brand">
+        </div>
         <div class="wrapper">
             <div class="question">
                 <h3>Are you a homeowner?</h3>
@@ -106,30 +110,8 @@
                 <h3>Current Loan Term</h3>
                 <p>Select your current loan term</p>
                 <div class="options">
-                    <button type="button" data-value="30 Years" class="selected">
-                        <img src="icon-calendar.png" alt="Icon">
-                        30 Years
-                    </button>
-                    <button type="button" data-value="20 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        20 Years
-                    </button>
-                    <button type="button" data-value="15 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        15 Years
-                    </button>
-                    <button type="button" data-value="10 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        10 Years
-                    </button>
-                    <button type="button" data-value="7 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        7 Years
-                    </button>
-                    <button type="button" data-value="5 Years">
-                        <img src="icon-calendar.png" alt="Icon">
-                        5 Years
-                    </button>
+                    <h2 id="lt">30 Years</h2>
+                    <input type="range" min="5" max="30" value="30" step="1" oninput="updateRangeValue(this, 'lt', 'loanTerm')">
                     <input type="hidden" name="loanTerm" value="30 Years">
                 </div>
             </div>
@@ -239,7 +221,6 @@
                 <h3>Address</h3>
                 <p>Enter your full address</p>
                 <div class="options">
-                    <img id="googleStreetViewSrc" class="house" src="https://ratetext9.com/wp-content/uploads/2024/12/placeholder.png"/>
                     <input type="text" id="address" name="address" placeholder="Enter Your Address" autocomplete="address-level1">
                     <input type="text" id="zip" name="ZIP" placeholder="Enter Your ZIP">
                 </div>
@@ -274,10 +255,10 @@
                     <label for="leadid_tcpa_disclosure">I agree to the <a target="_blank" href="terms.html">Terms of Service</a> and <a target="_blank" href="privacy.html">Privacy Policy</a> and authorize up to <a target="_blank" href="partners.html">4 solar energy companies</a>, their contractors and partners to contact me with offers about solar product or service by telephone calls, emails, artificial voice, and pre-recorded/text messages, using an automated telephone technology, to the number and email I provided above, even if my number is a mobile number or is currently listed on any state, federal or corporate <strong>Do Not Call List</strong>. I understand that my consent here is not a condition of purchase of any goods or services. Message and data rates may apply. California Notice. Text <strong>HELP</strong> for help, text <strong>STOP</strong> to cancel.</label>
                 </span>
             </div>
-            <div class="actions">
-                <button type="button" class="filled" id="next">Next</button>
-                <button type="button" class="simple" id="back"><i class="fa-solid fa-chevron-left"></i> Back</button>
-            </div>
+        </div>
+        <div class="actions">
+            <button type="button" class="outline" id="back"><i class="fa-solid fa-chevron-left"></i> Back</button>
+            <button type="button" id="next">Next</button>
         </div>
     </form>
 </body>
@@ -295,9 +276,23 @@
     function updateRangeValue(rangeInput, displayId, hiddenInputName) {
         const display = document.getElementById(displayId);
         const hiddenInput = document.querySelector(`input[name="${hiddenInputName}"]`);
+        
         const isPercentage = displayId === 'ir';
-        if (display) display.innerText = isPercentage ? rangeInput.value + '%' : '$' + Number(rangeInput.value).toLocaleString();
-        if (hiddenInput) hiddenInput.value = rangeInput.value;
+        const isYears = displayId === 'lt';
+        
+        if (display) {
+            if (isPercentage) {
+                display.innerText = rangeInput.value + '%';
+            } else if (isYears) {
+                display.innerText = rangeInput.value + ' Years';
+            } else {
+                display.innerText = '$' + Number(rangeInput.value).toLocaleString();
+            }
+        }
+        
+        if (hiddenInput) {
+            hiddenInput.value = rangeInput.value + (isYears ? ' Years' : '');
+        }
     }
 
     var current = 0;
