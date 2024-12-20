@@ -18,23 +18,22 @@
         </div>
         <div class="wrapper">
             <div class="question">
-                <h3>Are you a homeowner?</h3>
-                <p>Select if you currently own a home or are planning to buy one.</p>
+                <h3>Homeowner?</h3>
                 <div class="options">
                     <button type="button" data-value="Yes" class="selected">
                         <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
-                        Yes, I own a home
+                        Yes
                     </button>
                     <button type="button" data-value="No">
                         <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
-                        No, I'm looking to buy
+                        No
                     </button>
                     <input type="hidden" name="homeowner" value="Yes">
                 </div>
+                <p>Do you own a home or plan to buy one?</p>
             </div>
             <div class="question">
                 <h3>Property Type</h3>
-                <p>Select the type of your property</p>
                 <div class="options">
                     <button type="button" data-value="Single Family" class="selected">
                         <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-single.png" alt="Icon">
@@ -54,70 +53,70 @@
                     </button>
                     <input type="hidden" name="propertyType" value="Single Family">
                 </div>
+                <p>Select the type of your property</p>
             </div>
             <div class="question">
                 <h3>Property Value</h3>
-                <p>Enter the estimated value of your property</p>
                 <div class="options">
                     <h2 id="pv">$350,000</h2>
                     <input type="range" min="50000" max="1000000" value="350000" step="10000" oninput="updateRangeValue(this, 'pv', 'propertyValue')">
                     <input type="hidden" name="propertyValue" value="350000">
                 </div>
+                <p>Enter the estimated value of your property</p>
             </div>
             <div class="question">
                 <h3>Current Balance</h3>
-                <p>Enter your current loan balance</p>
                 <div class="options">
                     <h2 id="cb">$250,000</h2>
                     <input type="range" min="10000" max="1000000" value="250000" step="5000" oninput="updateRangeValue(this, 'cb', 'currentBalance')">
                     <input type="hidden" name="currentBalance" value="250000">
                 </div>
+                <p>Enter your current loan balance</p>
             </div>
             <div class="question">
                 <h3>Cash Out</h3>
-                <p>Select the amount you want to cash out</p>
                 <div class="options">
                     <h2 id="co">$150,000</h2>
                     <input type="range" min="5000" max="500000" value="150000" step="5000" oninput="updateRangeValue(this, 'co', 'cashOut')">
                     <input type="hidden" name="cashOut" value="150000">
                 </div>
+                <p>Select the amount you want to cash out</p>
             </div>
             <div class="question">
                 <h3>Current Interest Rate</h3>
-                <p>Enter your current interest rate.</p>
                 <div class="options">
                     <h2 id="ir">5%</h2>
                     <input type="range" min="2" max="12" value="5" step="0.25" oninput="updateRangeValue(this, 'ir', 'interestRate')">
                     <input type="hidden" name="interestRate" value="5">
                 </div>
+                <p>Enter your current interest rate.</p>
             </div>
             <div class="question">
                 <h3>Current Rate Type</h3>
-                <p>Is your current rate fixed or adjustable?</p>
                 <div class="options">
                     <button type="button" data-value="Fixed" class="selected">
-                        <img src="icon-chart.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-chart.png" alt="Icon">
                         Fixed
                     </button>
                     <button type="button" data-value="Variable">
-                        <img src="icon-variable.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-variable.png" alt="Icon">
                         Variable
                     </button>
                     <input type="hidden" name="rateType" value="Fixed">
                 </div>
+                <p>Is your current rate fixed or adjustable?</p>
             </div>
             <div class="question">
                 <h3>Current Loan Term</h3>
-                <p>Select your current loan term</p>
                 <div class="options">
                     <h2 id="lt">30 Years</h2>
                     <input type="range" min="5" max="30" value="30" step="1" oninput="updateRangeValue(this, 'lt', 'loanTerm')">
                     <input type="hidden" name="loanTerm" value="30 Years">
                 </div>
+                <p>Select your current loan term</p>
             </div>
             <div class="question">
                 <h3>Credit Score</h3>
-                <p>Rate your credit score</p>
                 <div class="options">
                     <button type="button" data-value="Excellent (700 and above)">
                         <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-excellent.png" alt="Icon">
@@ -137,29 +136,29 @@
                     </button>
                     <input type="hidden" name="creditScore" value="Good (640-699)">
                 </div>
+                <p>Rate your credit score</p>
             </div>
             <div class="question">
                 <h3>Loan Type</h3>
-                <p>What is your current loan type?</p>
                 <div class="options">
                     <button type="button" data-value="Conventional" class="selected">
-                        <img src="icon-bank.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-bank.png" alt="Icon">
                         Conventional
                     </button>
                     <button type="button" data-value="VA">
-                        <img src="icon-usa.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-usa.png" alt="Icon">
                         VA
                     </button>
                     <button type="button" data-value="FHA">
-                        <img src="icon-bank.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-bank.png" alt="Icon">
                         FHA
                     </button>
                     <input type="hidden" name="loanType" value="Conventional">
                 </div>
+                <p>What is your current loan type?</p>
             </div>
             <div class="question">
                 <h3>Military Service</h3>
-                <p>Military experience in your household?</p>
                 <div class="options">
                     <button type="button" data-value="Yes">
                         <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-usa.png" alt="Icon">
@@ -171,63 +170,63 @@
                     </button>
                     <input type="hidden" name="militaryService" value="No">
                 </div>
+                <p>Military experience in your household?</p>
             </div>
             <div class="question">
-                <h3>Bankruptcy or Foreclosure</h3>
-                <p>Recent bankruptcy or foreclosure?</p>
+                <h3>Bankruptcy</h3>
                 <div class="options">
                     <button type="button" data-value="Yes">
-                        <img src="icon-yes.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
                         Yes
                     </button>
                     <button type="button" data-value="No" class="selected">
-                        <img src="icon-no.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
                         No
                     </button>
                     <input type="hidden" name="bankruptcy" value="No">
                 </div>
+                <p>Recent bankruptcy or foreclosure?</p>
             </div>
             <div class="question">
                 <h3>Late Payments</h3>
-                <p>Do you have any history of late payments?</p>
                 <div class="options">
                     <button type="button" data-value="Yes">
-                        <img src="icon-yes.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
                         Yes
                     </button>
                     <button type="button" data-value="No" class="selected">
-                        <img src="icon-no.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
                         No
                     </button>
                     <input type="hidden" name="latePayments" value="No">
                 </div>
+                <p>Do you have any history of late payments?</p>
             </div>
             <div class="question">
                 <h3>Verified Income</h3>
-                <p>Is your income verified and documented?</p>
                 <div class="options">
                     <button type="button" data-value="Yes" class="selected">
-                        <img src="icon-yes.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
                         Yes
                     </button>
                     <button type="button" data-value="No">
-                        <img src="icon-no.png" alt="Icon">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
                         No
                     </button>
                     <input type="hidden" name="verifiedIncome" value="Yes">
                 </div>
+                <p>Is your income verified and documented?</p>
             </div>
             <div class="question">
                 <h3>Address</h3>
-                <p>Enter your full address</p>
                 <div class="options">
                     <input type="text" id="address" name="address" placeholder="Enter Your Full Address" autocomplete="address-level1">
                     <input type="text" id="zip" name="ZIP" placeholder="Enter Your ZIP">
                 </div>
+                <p>Select it from the Google Maps list.*</p>
             </div>       
             <div class="question">
                 <h3>Contact Information</h3>
-                <p>Complete this final step to see your results</p>
                 <div class="personal">
                     <div class="field field-50">
                         <label for="first">First Name</label>
