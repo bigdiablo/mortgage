@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="v2.css">
+    <script type="text/javascript" src="https://kit.fontawesome.com/4c9962e02c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="form" class="form" action="POST" onsubmit="return false;">
+        <div class="progress">
+            <div class="bar" id="bar"></div>
+        </div>
+        <div class="wrapper">
+            <div class="question">
+                <h3>Are you a homeowner?</h3>
+                <p>Select if you currently own a home or are planning to buy one.</p>
+                <div class="options">
+                    <button type="button" data-value="Yes" class="selected">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-yes.png" alt="Icon">
+                        Yes, I own a home
+                    </button>
+                    <button type="button" data-value="No">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
+                        No, I'm looking to buy
+                    </button>
+                    <input type="hidden" name="homeowner" value="Yes">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Property Type</h3>
+                <p>Select the type of your property</p>
+                <div class="options">
+                    <button type="button" data-value="Single Family" class="selected">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-single.png" alt="Icon">
+                        Single Family
+                    </button>
+                    <button type="button" data-value="Multi-Family">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-multi.png" alt="Icon">
+                        Multi-Family
+                    </button>
+                    <button type="button" data-value="Condominium">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-condo.png" alt="Icon">
+                        Condominium
+                    </button>
+                    <button type="button" data-value="Mobile Home">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-mobile.png" alt="Icon">
+                        Mobile Home
+                    </button>
+                    <input type="hidden" name="propertyType" value="Single Family">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Property Value</h3>
+                <p>Enter the estimated value of your property</p>
+                <div class="options">
+                    <h2 id="pv">$350,000</h2>
+                    <input type="range" min="50000" max="1000000" value="350000" step="10000" oninput="updateRangeValue(this, 'pv', 'propertyValue')">
+                    <input type="hidden" name="propertyValue" value="350000">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Current Balance</h3>
+                <p>Enter your current loan balance</p>
+                <div class="options">
+                    <h2 id="cb">$250,000</h2>
+                    <input type="range" min="10000" max="1000000" value="250000" step="5000" oninput="updateRangeValue(this, 'cb', 'currentBalance')">
+                    <input type="hidden" name="currentBalance" value="250000">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Cash Out</h3>
+                <p>Select the amount you want to cash out</p>
+                <div class="options">
+                    <h2 id="co">$150,000</h2>
+                    <input type="range" min="5000" max="500000" value="150000" step="5000" oninput="updateRangeValue(this, 'co', 'cashOut')">
+                    <input type="hidden" name="cashOut" value="150000">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Current Interest Rate</h3>
+                <p>Enter your current interest rate.</p>
+                <div class="options">
+                    <h2 id="ir">5%</h2>
+                    <input type="range" min="2" max="12" value="5" step="0.25" oninput="updateRangeValue(this, 'ir', 'interestRate')">
+                    <input type="hidden" name="interestRate" value="5">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Current Rate Type</h3>
+                <p>Is your current rate fixed or adjustable?</p>
+                <div class="options">
+                    <button type="button" data-value="Fixed" class="selected">
+                        <img src="icon-chart.png" alt="Icon">
+                        Fixed
+                    </button>
+                    <button type="button" data-value="Variable">
+                        <img src="icon-variable.png" alt="Icon">
+                        Variable
+                    </button>
+                    <input type="hidden" name="rateType" value="Fixed">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Current Loan Term</h3>
+                <p>Select your current loan term</p>
+                <div class="options">
+                    <button type="button" data-value="30 Years" class="selected">
+                        <img src="icon-calendar.png" alt="Icon">
+                        30 Years
+                    </button>
+                    <button type="button" data-value="20 Years">
+                        <img src="icon-calendar.png" alt="Icon">
+                        20 Years
+                    </button>
+                    <button type="button" data-value="15 Years">
+                        <img src="icon-calendar.png" alt="Icon">
+                        15 Years
+                    </button>
+                    <button type="button" data-value="10 Years">
+                        <img src="icon-calendar.png" alt="Icon">
+                        10 Years
+                    </button>
+                    <button type="button" data-value="7 Years">
+                        <img src="icon-calendar.png" alt="Icon">
+                        7 Years
+                    </button>
+                    <button type="button" data-value="5 Years">
+                        <img src="icon-calendar.png" alt="Icon">
+                        5 Years
+                    </button>
+                    <input type="hidden" name="loanTerm" value="30 Years">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Credit Score</h3>
+                <p>Rate your credit score</p>
+                <div class="options">
+                    <button type="button" data-value="Excellent (700 and above)">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-excellent.png" alt="Icon">
+                        Excellent (+700)
+                    </button>
+                    <button type="button" data-value="Good (640-699)" class="selected">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-good.png" alt="Icon">
+                        Good (700-640)
+                    </button>
+                    <button type="button" data-value="Fair (580-639)">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-fair.png" alt="Icon">
+                        Fair (640-560)
+                    </button>
+                    <button type="button" data-value="Poor (579 or less)">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-poor.png" alt="Icon">
+                        Poor (560)
+                    </button>
+                    <input type="hidden" name="creditScore" value="Good (640-699)">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Loan Type</h3>
+                <p>What is your current loan type?</p>
+                <div class="options">
+                    <button type="button" data-value="Conventional" class="selected">
+                        <img src="icon-bank.png" alt="Icon">
+                        Conventional
+                    </button>
+                    <button type="button" data-value="VA">
+                        <img src="icon-usa.png" alt="Icon">
+                        VA
+                    </button>
+                    <button type="button" data-value="FHA">
+                        <img src="icon-bank.png" alt="Icon">
+                        FHA
+                    </button>
+                    <input type="hidden" name="loanType" value="Conventional">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Military Service</h3>
+                <p>Military experience in your household?</p>
+                <div class="options">
+                    <button type="button" data-value="Yes">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-usa.png" alt="Icon">
+                        Yes
+                    </button>
+                    <button type="button" data-value="No" class="selected">
+                        <img src="https://ratetext9.com/wp-content/uploads/2024/11/icon-no.png" alt="Icon">
+                        No
+                    </button>
+                    <input type="hidden" name="militaryService" value="No">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Bankruptcy or Foreclosure</h3>
+                <p>Recent bankruptcy or foreclosure?</p>
+                <div class="options">
+                    <button type="button" data-value="Yes">
+                        <img src="icon-yes.png" alt="Icon">
+                        Yes
+                    </button>
+                    <button type="button" data-value="No" class="selected">
+                        <img src="icon-no.png" alt="Icon">
+                        No
+                    </button>
+                    <input type="hidden" name="bankruptcy" value="No">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Late Payments</h3>
+                <p>Do you have any history of late payments?</p>
+                <div class="options">
+                    <button type="button" data-value="Yes">
+                        <img src="icon-yes.png" alt="Icon">
+                        Yes
+                    </button>
+                    <button type="button" data-value="No" class="selected">
+                        <img src="icon-no.png" alt="Icon">
+                        No
+                    </button>
+                    <input type="hidden" name="latePayments" value="No">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Verified Income</h3>
+                <p>Is your income verified and documented?</p>
+                <div class="options">
+                    <button type="button" data-value="Yes" class="selected">
+                        <img src="icon-yes.png" alt="Icon">
+                        Yes
+                    </button>
+                    <button type="button" data-value="No">
+                        <img src="icon-no.png" alt="Icon">
+                        No
+                    </button>
+                    <input type="hidden" name="verifiedIncome" value="Yes">
+                </div>
+            </div>
+            <div class="question">
+                <h3>Address</h3>
+                <p>Enter your full address</p>
+                <div class="options">
+                    <img id="googleStreetViewSrc" class="house" src="https://ratetext9.com/wp-content/uploads/2024/12/placeholder.png"/>
+                    <input type="text" id="address" name="address" placeholder="Enter Your Address" autocomplete="address-level1">
+                    <input type="text" id="zip" name="ZIP" placeholder="Enter Your ZIP">
+                </div>
+            </div>       
+            <div class="question">
+                <h3>Contact Information</h3>
+                <p>Complete this final step to see your results</p>
+                <div class="final">
+                    <div class="field">
+                        <label for="first">First Name</label>
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <input type="text" id="first" name="first" placeholder="Enter First Name" autocomplete="name">
+                    </div>
+                    <div class="field">
+                        <label for="last">Last Name</label>
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <input type="text" id="last" name="last" placeholder="Enter Last Name" autocomplete="family-name">
+                    </div>
+                    <div class="field error">
+                        <label for="email">Email Address</label>
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        <input type="text" id="email" name="email" placeholder="Enter Email Address" autocomplete="email">
+                    </div>
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <i class="fa-regular fa-phone" aria-hidden="true"></i>
+                        <input type="text" id="phone" maxlength="10" name="phone" placeholder="Enter Phone Number" autocomplete="tel">
+                    </div>
+                </div>
+                <span ng-if="!params || !params.co || params.co==0">
+                    <input type="hidden" id="leadid_tcpa_disclosure">
+                    <label for="leadid_tcpa_disclosure">I agree to the <a target="_blank" href="terms.html">Terms of Service</a> and <a target="_blank" href="privacy.html">Privacy Policy</a> and authorize up to <a target="_blank" href="partners.html">4 solar energy companies</a>, their contractors and partners to contact me with offers about solar product or service by telephone calls, emails, artificial voice, and pre-recorded/text messages, using an automated telephone technology, to the number and email I provided above, even if my number is a mobile number or is currently listed on any state, federal or corporate <strong>Do Not Call List</strong>. I understand that my consent here is not a condition of purchase of any goods or services. Message and data rates may apply. California Notice. Text <strong>HELP</strong> for help, text <strong>STOP</strong> to cancel.</label>
+                </span>
+            </div>
+            <div class="actions">
+                <button type="button" class="filled" id="next">Next</button>
+                <button type="button" class="simple" id="back"><i class="fa-solid fa-chevron-left"></i> Back</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+    document.querySelectorAll('.options button').forEach(button => {
+        button.addEventListener('click', function () {
+            const parent = this.closest('.options');
+            parent.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+            const hiddenInput = parent.querySelector('input[type="hidden"]');
+            if (hiddenInput) hiddenInput.value = this.dataset.value;
+        });
+    });
+
+    function updateRangeValue(rangeInput, displayId, hiddenInputName) {
+        const display = document.getElementById(displayId);
+        const hiddenInput = document.querySelector(`input[name="${hiddenInputName}"]`);
+        const isPercentage = displayId === 'ir';
+        if (display) display.innerText = isPercentage ? rangeInput.value + '%' : '$' + Number(rangeInput.value).toLocaleString();
+        if (hiddenInput) hiddenInput.value = rangeInput.value;
+    }
+
+    var current = 0;
+    show(current);
+
+    function show(n) {
+        var tabs = document.getElementsByClassName("question");
+        tabs[n].style.display = "flex";
+        document.getElementById("back").style.display = n == 0 ? "none" : "flex";
+        document.getElementById("next").innerHTML = n == tabs.length - 1 ? "Submit & View Rates" : "Next";
+        update(n, tabs.length);
+    }
+
+    function move(n) {
+        var tabs = document.getElementsByClassName("question");
+        tabs[current].style.display = "none";
+        current += n;
+        if (current >= tabs.length) {
+            document.getElementById("form").submit();
+            return false;
+        }
+        show(current);
+    }
+
+    function update(step, total) {
+        var progress = ((step + 1) / total) * 100;
+        document.getElementById("bar").style.width = progress + "%";
+    }
+
+    document.getElementById("back").addEventListener("click", function () {
+        move(-1);
+    });
+
+    document.getElementById("next").addEventListener("click", function () {
+        move(1);
+    });
+</script>
+</html>
